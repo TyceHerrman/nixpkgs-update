@@ -1,5 +1,6 @@
 { nixpkgs
 , mmdoc
+, nixEvalJobs
 , runtimeDeps
 , system
 , self
@@ -19,6 +20,7 @@ let
     GIST = gist;
     # TODO: are there more coreutils paths that need locking down?
     TIMEOUT = coreutils;
+    NIXEVALJOBS = nixEvalJobs.packages.${system}.default;
     NIXPKGSREVIEW = nixpkgs-review;
   };
 
